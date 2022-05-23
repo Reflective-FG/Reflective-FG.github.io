@@ -175,11 +175,11 @@
 function loadGitalk () {
   function initGitalk () {
     var gitalk = new Gitalk(Object.assign({
-      clientID: '793343c37f432f0d5146',
-      clientSecret: '3596f0ec7e7e8c1eea71650b2db2f335452266b6',
-      repo: 'reflective-fg.github.io',
-      owner: 'Reflective-FG',
-      admin: ['Reflective-FG'],
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
       id: '55da12302a3a5050002556e65d5dfb41',
       updateCountCallback: commentCount
     },null))
@@ -201,8 +201,8 @@ function commentCount(n){
   }
 }
 
-if ('Gitalk' === 'Gitalk' || !false) {
-  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
   else loadGitalk()
 } else {
   function loadOtherComment () {
