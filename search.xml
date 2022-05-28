@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>CF1680F Lenient Vertex Cover</title>
+      <link href="/2022/05/28/CF1680F-Lenient-Vertex-Cover/"/>
+      <url>/2022/05/28/CF1680F-Lenient-Vertex-Cover/</url>
+      
+        <content type="html"><![CDATA[<p>DFS 树的性质。</p><p>首先注意到题面中的这一句话：</p><blockquote><p>最多只能有一条边，满足两个顶点都在这个点集中。</p></blockquote><p>显然，“最多只能有一条边”意思就是有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 条或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 条。</p><h3 id="0-条"><a class="markdownIt-Anchor" href="#0-条"></a> 0 条</h3><p>所以每条边都恰好只有一个顶点在点集中。</p><p>很自然想到二分图染色，每条边两个顶点颜色不同。</p><p>所以只要这个图是二分图，就一定有解。</p><h3 id="1-条"><a class="markdownIt-Anchor" href="#1-条"></a> 1 条</h3><p>有一条边的两个点同色，那么去掉这个边后，剩下的图一定就是一个二分图，就转化成了上一个情况。</p><p>先 DFS 一遍。一个<s>显然的</s>重要的性质是：对于原图中的每条边，要么是 DFS 树中的一条边，要么是一条返祖边（即一个点连向它祖先的边）。</p><p>因为二分图中没有奇环，所以这条去掉的边一定在所有奇环上，而不能在任何一个偶环上（这样去掉之后就全是偶环了）。</p><p>考虑去掉什么边。</p><h4 id="返祖边"><a class="markdownIt-Anchor" href="#返祖边"></a> 返祖边</h4><p>因为一个环在 DFS 树中一定是一条链加上一条返祖边，所以在 DFS 遇到返祖边时判断这个环是奇环还是偶环，就能统计出奇环数量了。如果奇环数量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，那么直接去掉那条返祖边即可。</p><h4 id="树边"><a class="markdownIt-Anchor" href="#树边"></a> 树边</h4><p>在统计环时把环上的所有树边都标记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span>，最后看是否有一个树边满足：</p><ul><li>所在的奇环数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo></mrow><annotation encoding="application/x-tex">=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span></span></span></span> 奇环总数</li><li>所在的偶环数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span></li></ul><p>即可。</p><p>标记时用树上差分即可，不会的同学可以左转 OI Wiki。</p><p>最后判断答案时只需要再 DFS 一遍，按照深度奇偶性染色即可。</p><p><strong>注意</strong>：有可能结果是：一条边满足两个顶点都不在点集中，其他每条边都有一个顶点在点集中。这时候只需要把所有颜色反转即可。</p><p><a href="https://www.luogu.com.cn/paste/ih3ur3wt">Code</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Solution </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Solution </tag>
+            
+            <tag> Search </tag>
+            
+            <tag> DFS </tag>
+            
+            <tag> Bipartite graph </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Lockdown-Daily</title>
       <link href="/2022/05/22/Lockdown-Daily/"/>
       <url>/2022/05/22/Lockdown-Daily/</url>
