@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/05/29/Hello-Comment/index/"/>
+      <url>/2022/05/29/Hello-Comment/index/</url>
+      
+        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>    <style>        #gitalk-container {            max-width: 600px;            margin: 0 auto;        }    </style></head><body>    <div id="gitalk-container"></div>    <script>        var gitalk = new Gitalk( {            clientID: '793343c37f432f0d5146',            clientSecret: '3596f0ec7e7e8c1eea71650b2db2f335452266b6',            repo: 'Reflective-FG.github.io',            owner: 'Reflective-FG',            admin: [ 'Reflective-FG' ],            id: location.pathname, // Ensure uniqueness and len            distractionFreeMode: false, // Facebook-like distraction            language: 'zh-CN'        } )        gitalk.render( 'gitalk-container' )    </script></body></html>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【学习笔记】FFT字符串匹配</title>
       <link href="/2022/05/29/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91FFT%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
       <url>/2022/05/29/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91FFT%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</url>
@@ -98,6 +111,33 @@
       <title>Hello-Blog</title>
       <link href="/2022/05/22/Hello-Blog/"/>
       <url>/2022/05/22/Hello-Blog/</url>
+      
+        <content type="html"><![CDATA[<p>This is my first blog on Github!</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Test </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Commemoration </tag>
+            
+            <tag> Test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello-Comment</title>
+      <link href="/2022/05/22/Hello-Comment/index/"/>
+      <url>/2022/05/22/Hello-Comment/index/</url>
       
         <content type="html"><![CDATA[<p>This is my first blog on Github!</p>]]></content>
       
