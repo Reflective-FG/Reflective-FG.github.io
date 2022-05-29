@@ -4,13 +4,31 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2022/05/29/Hello-Blog/"/>
-      <url>/2022/05/29/Hello-Blog/</url>
+      <title>【学习笔记】FFT字符串匹配</title>
+      <link href="/2022/05/29/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91FFT%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/"/>
+      <url>/2022/05/29/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91FFT%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</url>
       
-        <content type="html"><![CDATA[<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>    <style>        #gitalk-container {            max-width: 600px;            margin: 0 auto;        }    </style></head><body>    <div id="gitalk-container"></div>    <script>        var gitalk = new Gitalk( {            clientID: '793343c37f432f0d5146',            clientSecret: '3596f0ec7e7e8c1eea71650b2db2f335452266b6',            repo: 'Reflective-FG.github.io',            owner: 'Reflective-FG',            admin: [ 'Reflective-FG' ],            id: location.pathname, // Ensure uniqueness and len            distractionFreeMode: false, // Facebook-like distraction            language: 'zh-CN'        } )        gitalk.render( 'gitalk-container' )    </script></body></html>]]></content>
+        <content type="html"><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1><p>字符串匹配，一个广泛而深刻的话题。</p><p>现有的字符串匹配算法有很多，例如 KMP，AC 自动机等等。但是，它们都是一位一位的处理，也就是说，基础操作是单个字符比较（哈希除外）。如果把整个字符串比较，效率是极其低下的。但将字符串转化为多项式后，多项式的运算无疑为整个字符串比较提供了绝佳的方法。</p><p>最知名但也最臭名昭著的多项式算法莫过于 FFT（快速傅里叶变换）了。实际上，它在字符串匹配方面也有很大的作用。</p><h1 id="普通字符串匹配"><a class="markdownIt-Anchor" href="#普通字符串匹配"></a> 普通字符串匹配</h1><p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span> 为模式串，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 为文本串，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mo stretchy="false">∣</mo><mi>S</mi><mo stretchy="false">∣</mo><mo separator="true">,</mo><mi>m</mi><mo>=</mo><mo stretchy="false">∣</mo><mi>T</mi><mo stretchy="false">∣</mo></mrow><annotation encoding="application/x-tex">n=\lvert S \rvert,m=\lvert T \rvert</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∣</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">∣</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">∣</span></span></span></span>。</p><p>显然，两个字符串相同，当且仅当它们每一位都相同，这是一句废话。</p>]]></content>
       
       
+      <categories>
+          
+          <category> Note </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Note </tag>
+            
+            <tag> Polynomial </tag>
+            
+            <tag> FFT </tag>
+            
+            <tag> String </tag>
+            
+        </tags>
       
     </entry>
     
