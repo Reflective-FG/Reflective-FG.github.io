@@ -4,27 +4,56 @@
   
     
     <entry>
-      <title>FG不知道的小trick</title>
-      <link href="/2022/06/07/FG%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%B0%8Ftrick/"/>
-      <url>/2022/06/07/FG%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84%E5%B0%8Ftrick/</url>
+      <title>FGの伟大影视计划</title>
+      <link href="/2022/06/08/FG%E3%81%AE%E4%BC%9F%E5%A4%A7%E5%BD%B1%E8%A7%86%E8%AE%A1%E5%88%92/"/>
+      <url>/2022/06/08/FG%E3%81%AE%E4%BC%9F%E5%A4%A7%E5%BD%B1%E8%A7%86%E8%AE%A1%E5%88%92/</url>
       
-        <content type="html"><![CDATA[<h2 id="debug-小工具"><a class="markdownIt-Anchor" href="#debug-小工具"></a> Debug 小工具</h2><p>从 CF 大佬博客里学来的</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> <span class="keyword">error</span>(args...) &#123; string _s = #args; replace(_s.begin(), _s.end(), <span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27; &#x27;</span>); stringstream _ss(_s); istream_iterator<span class="string">&lt;string&gt;</span> _it(_ss); err(_it, args); &#125;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;string&gt; it)</span> </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;string&gt; it, T a, Args... args)</span> </span>&#123;</span><br><span class="line">    cerr &lt;&lt; *it &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; <span class="string">&#x27;=&#x27;</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">err</span>(++it, args...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Code</span></span><br><span class="line"><span class="type">int</span> a,b,c;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line"><span class="built_in">error</span>(a,b,c);</span><br><span class="line"><span class="comment">// Input</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="comment">// Output</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">c = <span class="number">3</span></span><br></pre></td></tr></table></figure><p>应该算是 C++ 小 trick了吧，感觉还挺好用的</p><h2 id="枚举子集"><a class="markdownIt-Anchor" href="#枚举子集"></a> 枚举子集</h2><p>枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 在二进制下的的所有子集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>（即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi mathvariant="normal">&amp;</mi><mi>j</mi><mo>=</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i \&amp; j=j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord">&amp;</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>）</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=i;;j=(j<span class="number">-1</span>)&amp;i)&#123;</span><br><span class="line">    <span class="comment">// something here</span></span><br><span class="line">    <span class="keyword">if</span>(!j)<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<p>FG 感到自己似乎知识面太狭窄了，于是想看点影视作品</p><h2 id="番剧"><a class="markdownIt-Anchor" href="#番剧"></a> 番剧</h2><p>为什么泥萌都看了那么多番了啊</p><p>看来还是 FG 看番效率太低了 /kk</p><ul><li>とある科学の超電磁砲</li><li>四月は君の嘘</li><li>あの日見た花の名前を僕達はまだ知らない</li></ul><p>FG 看 12 集的末日三问看了一年，不知道这些番要看多久呢 /wx</p><h2 id="电影"><a class="markdownIt-Anchor" href="#电影"></a> 电影</h2><p>新海诚好像 11 月要有新电影了，支持一下吧</p><ul><li>秒速5センチメートル</li><li>Hamlet</li></ul>]]></content>
       
       
       <categories>
           
-          <category> Note </category>
+          <category> 计划 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Note </tag>
+            <tag> 番剧 </tag>
             
-            <tag> Trick </tag>
+            <tag> 电影 </tag>
             
-            <tag> Collection </tag>
+            <tag> 计划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>FG不知道の小trick</title>
+      <link href="/2022/06/07/FG%E4%B8%8D%E7%9F%A5%E9%81%93%E3%81%AE%E5%B0%8Ftrick/"/>
+      <url>/2022/06/07/FG%E4%B8%8D%E7%9F%A5%E9%81%93%E3%81%AE%E5%B0%8Ftrick/</url>
+      
+        <content type="html"><![CDATA[<h2 id="debug-小工具"><a class="markdownIt-Anchor" href="#debug-小工具"></a> Debug 小工具</h2><p>从 CF 大佬博客里学来的</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> <span class="keyword">error</span>(args...) &#123; string _s = #args; replace(_s.begin(), _s.end(), <span class="string">&#x27;,&#x27;</span>, <span class="string">&#x27; &#x27;</span>); stringstream _ss(_s); istream_iterator<span class="string">&lt;string&gt;</span> _it(_ss); err(_it, args); &#125;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;string&gt; it)</span> </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;string&gt; it, T a, Args... args)</span> </span>&#123;</span><br><span class="line">    cerr &lt;&lt; *it &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; <span class="string">&#x27;=&#x27;</span> &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">err</span>(++it, args...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Code</span></span><br><span class="line"><span class="type">int</span> a,b,c;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line"><span class="built_in">error</span>(a,b,c);</span><br><span class="line"><span class="comment">// Input</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="comment">// Output</span></span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line">c = <span class="number">3</span></span><br></pre></td></tr></table></figure><p>应该算是 C++ 小 trick了吧，感觉还挺好用的</p><h2 id="枚举子集"><a class="markdownIt-Anchor" href="#枚举子集"></a> 枚举子集</h2><p>枚举 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 在二进制下的的所有子集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>（即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi mathvariant="normal">&amp;</mi><mi>j</mi><mo>=</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i \&amp; j=j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">i</span><span class="mord">&amp;</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span></span></span></span>）</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> j=i;;j=(j<span class="number">-1</span>)&amp;i)&#123;</span><br><span class="line">    <span class="comment">// something here</span></span><br><span class="line">    <span class="keyword">if</span>(!j)<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习笔记 </tag>
+            
+            <tag> 技巧 </tag>
+            
+            <tag> 收集品 </tag>
             
         </tags>
       
@@ -42,16 +71,16 @@
       
       <categories>
           
-          <category> Novel </category>
+          <category> 小说 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Novel </tag>
+            <tag> 小说 </tag>
             
-            <tag> Biography </tag>
+            <tag> 传记 </tag>
             
         </tags>
       
@@ -69,20 +98,20 @@
       
       <categories>
           
-          <category> Note </category>
+          <category> 学习笔记 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Note </tag>
-            
-            <tag> Polynomial </tag>
-            
             <tag> FFT </tag>
             
-            <tag> String </tag>
+            <tag> 学习笔记 </tag>
+            
+            <tag> 多项式 </tag>
+            
+            <tag> 字符串 </tag>
             
         </tags>
       
@@ -100,20 +129,20 @@
       
       <categories>
           
-          <category> Solution </category>
+          <category> 题解 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Solution </tag>
-            
-            <tag> Search </tag>
-            
             <tag> DFS </tag>
             
-            <tag> Bipartite graph </tag>
+            <tag> 题解 </tag>
+            
+            <tag> 搜索 </tag>
+            
+            <tag> 二分图 </tag>
             
         </tags>
       
@@ -138,11 +167,11 @@
       
         <tags>
             
-            <tag> Daily </tag>
+            <tag> 日记 </tag>
             
-            <tag> Lockdown </tag>
+            <tag> 居家 </tag>
             
-            <tag> Cold </tag>
+            <tag> 感冒 </tag>
             
         </tags>
       
@@ -160,16 +189,16 @@
       
       <categories>
           
-          <category> Test </category>
+          <category> 测试 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Commemoration </tag>
+            <tag> 纪念品 </tag>
             
-            <tag> Test </tag>
+            <tag> 测试 </tag>
             
         </tags>
       
