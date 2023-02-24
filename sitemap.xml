@@ -183,21 +183,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%9B%BE%E8%AE%BA/</loc>
-    <lastmod>2023-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2023-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Codeforces/</loc>
+    <lastmod>2023-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -218,14 +211,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/FFT/</loc>
-    <lastmod>2023-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/SPOJ/</loc>
+    <loc>http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -253,6 +239,20 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/FFT/</loc>
+    <lastmod>2023-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/SPOJ/</loc>
+    <lastmod>2023-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/URAL/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -260,7 +260,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/UVA/</loc>
+    <loc>http://example.com/tags/USACO/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -274,14 +274,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%A8%A1%E6%8B%9F/</loc>
+    <loc>http://example.com/tags/UVA/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/USACO/</loc>
+    <loc>http://example.com/tags/%E6%A8%A1%E6%8B%9F/</loc>
     <lastmod>2023-02-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
