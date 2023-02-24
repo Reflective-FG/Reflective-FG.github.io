@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/CF1775E-The-Human-Equation/</loc>
+    <lastmod>2023-02-21</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/ABC255%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2023-01-30</lastmod>
   </url>
@@ -34,10 +38,6 @@
   </url>
   <url>
     <loc>http://example.com/Codeforces-Hello-2023-%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-01-29</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/CF1775E-The-Human-Equation/</loc>
     <lastmod>2023-01-29</lastmod>
   </url>
   <url>
