@@ -20,6 +20,15 @@
   </url>
   
   <url>
+    <loc>http://example.com/baidu_verify_codeva-UYLWsifqNl.html</loc>
+    
+    <lastmod>2023-02-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/404.html</loc>
     
     <lastmod>2023-01-30</lastmod>
@@ -206,6 +215,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2023-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Codeforces/</loc>
     <lastmod>2023-03-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -213,7 +229,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>http://example.com/tags/DFS%E6%A0%91/</loc>
+    <lastmod>2023-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</loc>
     <lastmod>2023-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -241,6 +264,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/URAL/</loc>
+    <lastmod>2023-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/FFT/</loc>
     <lastmod>2023-03-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,28 +278,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/DFS%E6%A0%91/</loc>
-    <lastmod>2023-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</loc>
-    <lastmod>2023-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/SPOJ/</loc>
-    <lastmod>2023-03-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/URAL/</loc>
     <lastmod>2023-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
