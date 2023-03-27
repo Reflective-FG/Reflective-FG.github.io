@@ -258,7 +258,14 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E6%A0%91/</loc>
+    <loc>https://reflective-fg.github.io/tags/Codeforces/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -272,14 +279,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/Codeforces/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E6%A0%91/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -314,14 +314,14 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/SPOJ/</loc>
+    <loc>https://reflective-fg.github.io/tags/POJ/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/POJ/</loc>
+    <loc>https://reflective-fg.github.io/tags/SPOJ/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -342,7 +342,21 @@
   </url>
   
   <url>
+    <loc>https://reflective-fg.github.io/tags/UVA/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://reflective-fg.github.io/tags/%E6%90%9C%E7%B4%A2/</loc>
+    <lastmod>2023-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/%E6%A8%A1%E6%8B%9F/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -357,20 +371,6 @@
   
   <url>
     <loc>https://reflective-fg.github.io/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/UVA/</loc>
-    <lastmod>2023-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/%E6%A8%A1%E6%8B%9F/</loc>
     <lastmod>2023-03-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
