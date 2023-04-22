@@ -200,15 +200,6 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/QC.html</loc>
-    
-    <lastmod>2022-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://reflective-fg.github.io/README.html</loc>
     
     <lastmod>2022-04-28</lastmod>
@@ -227,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/StreamingAssets/aa/settings.json</loc>
+    <loc>https://reflective-fg.github.io/StreamingAssets/aa/catalog.json</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -236,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/StreamingAssets/aa/catalog.json</loc>
+    <loc>https://reflective-fg.github.io/StreamingAssets/aa/settings.json</loc>
     
     <lastmod>2022-04-28</lastmod>
     
@@ -261,6 +252,20 @@
   </url>
   
   <url>
+    <loc>https://reflective-fg.github.io/tags/AtCoder/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://reflective-fg.github.io/tags/Pi%E8%8A%82/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -269,20 +274,6 @@
   
   <url>
     <loc>https://reflective-fg.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/%E6%A0%91/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/AtCoder/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -303,13 +294,6 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://reflective-fg.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -324,14 +308,21 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/POJ/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E6%A0%91/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -345,6 +336,13 @@
   </url>
   
   <url>
+    <loc>https://reflective-fg.github.io/tags/DP/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://reflective-fg.github.io/tags/FFT/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -352,7 +350,14 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86/</loc>
+    <loc>https://reflective-fg.github.io/tags/POJ/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/SPOJ/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -373,14 +378,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/DP/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/SPOJ/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -394,21 +392,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E6%90%9C%E7%B4%A2/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://reflective-fg.github.io/tags/%E6%A8%A1%E6%8B%9F/</loc>
-    <lastmod>2023-04-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://reflective-fg.github.io/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -428,6 +412,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://reflective-fg.github.io/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/</loc>
+    <lastmod>2023-04-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -438,14 +429,14 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://reflective-fg.github.io/categories/%E9%A2%98%E8%A7%A3/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/categories/%E9%A2%98%E8%A7%A3/</loc>
+    <loc>https://reflective-fg.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2023-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
