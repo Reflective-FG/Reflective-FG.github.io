@@ -1,0 +1,5 @@
+KEY,VALUE,CONTEXT
+ExclusiveFullScreen,Fullscreen,Display mode option to play the game in Fullscreen
+FullScreenWindow,Borderless Windowed,Display mode option to play the game in a Borderless Window
+MaximizedWindow,Maximized Window,Display mode option to play the game in Maxmized Window
+Windowed,Windowed,Display mode option to play the game in a Window
