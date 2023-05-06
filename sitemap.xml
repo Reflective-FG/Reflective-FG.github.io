@@ -245,13 +245,6 @@
 
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/</loc>
-    <lastmod>2023-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://reflective-fg.github.io/tags/AtCoder/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -280,7 +273,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/Pi%E8%8A%82/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -294,7 +287,7 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</loc>
+    <loc>https://reflective-fg.github.io/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -316,6 +309,13 @@
   
   <url>
     <loc>https://reflective-fg.github.io/tags/%E4%BA%8C%E5%88%86/</loc>
+    <lastmod>2023-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://reflective-fg.github.io/tags/Pi%E8%8A%82/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -429,14 +429,14 @@
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://reflective-fg.github.io/categories/%E9%A2%98%E8%A7%A3/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://reflective-fg.github.io/categories/%E9%A2%98%E8%A7%A3/</loc>
+    <loc>https://reflective-fg.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2023-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
