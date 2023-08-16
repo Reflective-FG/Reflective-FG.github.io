@@ -6,7 +6,7 @@
   <link href="http://rushroom.top/atom.xml" rel="self"/>
   
   <link href="http://rushroom.top/"/>
-  <updated>2023-03-26T14:40:40.566Z</updated>
+  <updated>2023-08-16T14:48:04.045Z</updated>
   <id>http://rushroom.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>百度之星2023初赛游记</title>
+    <link href="http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
+    <published>2023-08-16T13:19:48.629Z</published>
+    <updated>2023-08-16T14:48:04.045Z</updated>
+    
+    <content type="html"><![CDATA[<p>打得是第一场，赛时只做出了5题，rk50几，感觉不太行。</p><p>[题目传送门](<a href="https://www.matiji.net/exam/ojquestionlist?questionBankId=179CE77A7B772D15A8C00DD8198AAC74">码蹄集 (matiji.net)</a>)</p><span id="more"></span><h1 id="1-2-3-5"><a href="#1-2-3-5" class="headerlink" title="1, 2, 3, 5"></a>1, 2, 3, 5</h1><p>十分简单，四道签到题，三道是二分。</p><h1 id="6-随机序列逆序数"><a href="#6-随机序列逆序数" class="headerlink" title="6. 随机序列逆序数"></a>6. 随机序列逆序数</h1><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个集合 $b$，大小为 $n$。</p><p>执行 $n$ 次操作。每次操作取出一个数。记此时集合中所有数之和为 $s$，则取出 $x$ 的概率为 $\dfrac{x}{s}$。取出后不再放回。</p><p>取出的数依次组成数列 $a$，求 $a$ 的逆序对数量的期望值$\mod 998244353$。</p><p>$n \le 10^6, b_i \le 10^5$</p><h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>考虑两个数 $x, y$ $(x&lt;y)$ 形成逆序对的概率是多少。</p><p>设 $m$ 为第 $m$ 次操作前，$x,y$ 都没被取出，第 $m$ 次操作时，$x,y$ 中有一个被取出。那么 $y$ 在此时被取出的概率即为 $\dfrac{y}{x+y}$。因此问题的答案就是 $\sum\limits_{x&lt;y} \dfrac{y}{x+y}$。</p><p>使用分治 NTT 解决。设 $c_i$ 为集合中 $i$ 的数量，在 $c$ 上进行分治。</p><p>合并时，把分母相同的放在一起算，即要求出 $\sum\limits_{x+y&#x3D;s} y$。对于左边一半，$f_i&#x3D;c_i$；对于右边一半，$g_i&#x3D;c_i\cdot i$。这样 $f\cdot g$ 的第 $s$ 位即为所求。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><p>似乎卡常，递归的NTT无法通过，需要写非递归版。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1000006</span>, mod = <span class="number">998244353</span>;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">    ll p = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>)p = p * x % mod;</span><br><span class="line">        x = x * x % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n, b[N], cnt = <span class="number">0</span>;</span><br><span class="line">ll ans = <span class="number">0</span>;</span><br><span class="line">ll f[N], g[N], c[N];</span><br><span class="line"><span class="type">int</span> re[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">NTT</span><span class="params">(ll *a, <span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> k;</span><br><span class="line">    ll wn, w, t;</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) re[i] = (i &amp; <span class="number">1</span>) * (lim &gt;&gt; <span class="number">1</span>) + (re[i &gt;&gt; <span class="number">1</span>] &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) <span class="keyword">if</span>(re[i] &lt; i) <span class="built_in">swap</span>(a[i], a[re[i]]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> m = <span class="number">2</span>; m &lt;= lim; m *= <span class="number">2</span>) &#123;</span><br><span class="line">        k = m &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        wn = <span class="built_in">qpow</span>(<span class="number">3</span>, (mod - <span class="number">1</span>) / m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; lim; i += m) &#123;</span><br><span class="line">            w = <span class="number">1</span>;</span><br><span class="line">            <span class="built_in">rep</span>(j, k) &#123;</span><br><span class="line">                t = a[i + j + k] * w % mod;</span><br><span class="line">                a[i + j + k] = (a[i + j] - t + mod) % mod;</span><br><span class="line">                a[i + j] = (a[i + j] + t) % mod;</span><br><span class="line">                w = w * wn % mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r) <span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">solve</span>(l, mid), <span class="built_in">solve</span>(mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="type">int</span> lim = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(lim &lt;= mid - l + <span class="number">1</span> || lim &lt;= r - mid) lim *= <span class="number">2</span>;</span><br><span class="line">    lim *= <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) f[i] = g[i] = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, mid - l + <span class="number">1</span>) f[i] = c[l + i];</span><br><span class="line">    <span class="built_in">rep</span>(i, r - mid) g[i] = c[mid + <span class="number">1</span> + i] * (mid + <span class="number">1</span> + i);</span><br><span class="line">    <span class="built_in">NTT</span>(f, lim), <span class="built_in">NTT</span>(g, lim);</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) f[i] = f[i] * g[i] % mod;</span><br><span class="line">    <span class="built_in">NTT</span>(f, lim);</span><br><span class="line">    <span class="type">int</span> inv = <span class="built_in">qpow</span>(lim, mod - <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) f[i] = f[i] * inv % mod;</span><br><span class="line">    <span class="built_in">reverse</span>(f + <span class="number">1</span>, f + lim);</span><br><span class="line">    <span class="built_in">rep</span>(i, lim) ans = (ans + f[i] * <span class="built_in">qpow</span>(i + l + mid + <span class="number">1</span>, mod - <span class="number">2</span>)) % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">rep</span>(i, n) cin &gt;&gt; b[i], c[b[i]]++;</span><br><span class="line">    n = <span class="number">100000</span>;</span><br><span class="line">    <span class="built_in">solve</span>(<span class="number">1</span>, n);</span><br><span class="line">    cout &lt;&lt; ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="7-数字串"><a href="#7-数字串" class="headerlink" title="7. 数字串"></a>7. 数字串</h1><h2 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h2><p>给定一个 $n$ 位数 $s$，在其中添加<strong>恰好</strong> $k$ 个加号，使得结果最大。输出这个最大的结果。</p><p>如 <code>123</code> 添加一个加号后可变成 <code>1+23=24</code> 或 <code>12+3=15</code>。</p><p>$k &lt; n \le 10^6$</p><h2 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h2><p>显然应该要保留尽可能多的位数在一起，所以结果应该是一个 $n-k$ 位数加上 $k$ 个一位数。</p><p>此时问题变成寻找最大的 $n-k$ 位数，可使用后缀数组解决。</p><h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h2><p>其实就是SA模板。O3 优化后可以通过。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">2000006</span>;</span><br><span class="line"><span class="type">int</span> n, k, m = N;</span><br><span class="line">string s;</span><br><span class="line"><span class="type">int</span> rk[N], rk2[N], sa[N], id[N], cnt[N];</span><br><span class="line"><span class="type">int</span> st;</span><br><span class="line"><span class="type">int</span> ans[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k &gt;&gt; s;</span><br><span class="line">    s = <span class="string">&#x27;-&#x27;</span> + s;</span><br><span class="line">    <span class="built_in">repp</span>(i, n)cnt[rk[i] = s[i]]++;</span><br><span class="line">    <span class="built_in">repp</span>(i, m)cnt[i] += cnt[i - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = n;i &gt; <span class="number">0</span>;i--)sa[cnt[rk[i]]--] = i;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> len = <span class="number">1</span>;len &lt;= n;len *= <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">init</span>(cnt, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">repp</span>(i, n)id[i] = sa[i];</span><br><span class="line">        <span class="built_in">repp</span>(i, n)cnt[rk[id[i] + len]]++;</span><br><span class="line">        <span class="built_in">repp</span>(i, m)cnt[i] += cnt[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = n;i &gt; <span class="number">0</span>;i--)sa[cnt[rk[id[i] + len]]--] = id[i];</span><br><span class="line">        <span class="built_in">init</span>(cnt, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">repp</span>(i, n)id[i] = sa[i];</span><br><span class="line">        <span class="built_in">repp</span>(i, n)cnt[rk[id[i]]]++;</span><br><span class="line">        <span class="built_in">repp</span>(i, m)cnt[i] += cnt[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = n;i &gt; <span class="number">0</span>;i--)sa[cnt[rk[id[i]]]--] = id[i];</span><br><span class="line">        <span class="built_in">memcpy</span>(rk2, rk, <span class="built_in">sizeof</span>(rk2));</span><br><span class="line">        <span class="type">int</span> now = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">repp</span>(i, n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (rk2[sa[i]] == rk2[sa[i - <span class="number">1</span>]] &amp;&amp; rk2[sa[i] + len] == rk2[sa[i - <span class="number">1</span>] + len])rk[sa[i]] = now;</span><br><span class="line">            <span class="keyword">else</span> rk[sa[i]] = ++now;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">repp</span>(i, n) <span class="keyword">if</span>(sa[i] &lt;= k + <span class="number">1</span>) st = sa[i];</span><br><span class="line">    <span class="built_in">repp</span>(i, n - k) ans[i] = s[st + i - <span class="number">1</span>] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="built_in">repp</span>(i, n) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i &lt; st || i &gt;= st + n - k) &#123;</span><br><span class="line">            <span class="type">int</span> x = s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">            <span class="type">int</span> p = n - k;</span><br><span class="line">            ans[p] += x;</span><br><span class="line">            <span class="keyword">while</span>(ans[p] &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">                ans[p] %= <span class="number">10</span>;</span><br><span class="line">                p--;</span><br><span class="line">                ans[p] ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans[<span class="number">0</span>]) cout &lt;&lt; ans[<span class="number">0</span>];</span><br><span class="line">    <span class="built_in">repp</span>(i, n - k) cout &lt;&lt; ans[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="8-除法游戏"><a href="#8-除法游戏" class="headerlink" title="8. 除法游戏"></a>8. 除法游戏</h1><h2 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h2><p>有 $n$ 堆石子，第 $i$ 堆有 $a_i$ 个。两人轮流操作，每次可以选择一堆石子（至少有 $2$ 个），然后平均分成若干堆。不能操作者判负。输出胜者为先手还是后手。</p><p>$n \le 5\cdot 10^4, a_i \le 10^{12}$</p><h2 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h2><p>可以首先发现的是，如果有偶数堆石子数量相同，那么其中一方必然可以复制另一方的操作，因此这几堆对胜负没有任何影响，可以直接删去。</p><p>若一堆石子为奇数个，则操作后必然分成奇数堆，于是可以删去除一堆外的所有。因此对一个奇数堆进行操作，实质上是将它除以一个因子。</p><p>若一堆石子为偶数个，则可分两种情况：若分为偶数个石子堆，则可将它们直接删去；若分为奇数堆。则删去除一堆外所有。因此对一个奇数堆进行操作，实质上是将它除以一个奇因子，或将直接删除。</p><p>于是可以转化为一个 Nim 游戏。一个数的每个奇质因子就相当于一个石子，除以一个奇因子就相当于拿走若干个石子。对于偶数，由于可以把所有奇因子除完后再通过一次操作把它删除，所以要多算一个石子。</p><p>因此我们要统计出所有数对应的石子数（若有一个奇质因子的多次幂则算多个，$2$ 的多次幂只算一个）。若它们异或和为 $0$ 则后手胜，否则先手胜。</p><p>问题是 $a_i$ 有 $10^{12}$，如何统计质因子。方法是先用 $10^4$ 内所有质数试除，能分解就分解。这样过后 $a$ 若没有分解完，则剩下的质因子都 $&gt;10^4$，而 $a_i \le 10^12$，于是最多只剩两个质因子。此时若它是质数则只剩一个，否则就是剩两个。</p><p>指数检测用 Miller-Rabin 算法。然而网上的许多模板都无法通过这道题，包括我自己之前写的，或许是数据有意在卡？最后是<a href="https://www.luogu.com.cn/blog/luo1gu1zui1bang1/zhi-yin-shuo-fen-xie">这篇文章</a>中的代码顺利通过了这题，在此感谢作者。</p><h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> tl = <span class="number">12</span>;</span><br><span class="line"><span class="type">const</span> ll p[] = &#123; <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>, <span class="number">29</span>, <span class="number">31</span>, <span class="number">37</span> &#125;;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll x, ll y, ll mod)</span> </span>&#123;</span><br><span class="line">    ll p = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>)p = (__int128)p * x % mod;</span><br><span class="line">        x = (__int128)x * x % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">MillerRabin</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">1</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>;i &lt; tl;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x == p[i])<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">bool</span> ok = <span class="number">0</span>;</span><br><span class="line">        ll v = x - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> ((v &amp; <span class="number">1</span>) == <span class="number">0</span>)v &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        ll y = <span class="built_in">qpow</span>(p[i], v, x);</span><br><span class="line">        <span class="keyword">if</span> (y == <span class="number">1</span>)ok = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (v &lt; x - <span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (y == x - <span class="number">1</span>) &#123;</span><br><span class="line">                    ok = <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                v &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">                y = (__int128) y * y % x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!ok)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> n, ans = <span class="number">0</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; v;</span><br><span class="line">ll a;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    forr(i, <span class="number">2</span>, <span class="number">10000</span>) <span class="keyword">if</span> (<span class="built_in">MillerRabin</span>(i)) v.<span class="built_in">pb</span>(i);</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">rep</span>(i, n) &#123;</span><br><span class="line">        cin &gt;&gt; a;</span><br><span class="line">        <span class="type">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> p : v) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a % p == <span class="number">0</span>) &#123;</span><br><span class="line">                t++, a /= p;</span><br><span class="line">                <span class="keyword">while</span>(a % p == <span class="number">0</span>) a /= p, t += (p &gt; <span class="number">2</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; <span class="number">1</span>) t += <span class="number">2</span> - <span class="built_in">MillerRabin</span>(a);</span><br><span class="line">        ans ^= t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (ans) cout &lt;&lt; <span class="string">&quot;Xiaodu&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span> cout &lt;&lt; <span class="string">&quot;Duduxiong&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="4-流水线搭积木"><a href="#4-流水线搭积木" class="headerlink" title="4. 流水线搭积木"></a>4. 流水线搭积木</h1><p>貌似是平衡树，以后有空补。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;打得是第一场，赛时只做出了5题，rk50几，感觉不太行。&lt;/p&gt;
+&lt;p&gt;[题目传送门](&lt;a href=&quot;https://www.matiji.net/exam/ojquestionlist?questionBankId=179CE77A7B772D15A8C00DD8198AAC74&quot;&gt;码蹄集 (matiji.net)&lt;/a&gt;)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="百度之星" scheme="http://rushroom.top/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>CF1617E Christmas Chocolates</title>
@@ -130,9 +152,9 @@
     <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="Codeforces" scheme="http://rushroom.top/tags/Codeforces/"/>
-    
     <category term="树" scheme="http://rushroom.top/tags/%E6%A0%91/"/>
+    
+    <category term="Codeforces" scheme="http://rushroom.top/tags/Codeforces/"/>
     
   </entry>
   
@@ -153,9 +175,9 @@
     <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
     <category term="Pi节" scheme="http://rushroom.top/tags/Pi%E8%8A%82/"/>
+    
+    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -177,9 +199,9 @@
     <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
-    
     <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
     
     <category term="字符串" scheme="http://rushroom.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
@@ -204,9 +226,9 @@
     
     <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="搜索" scheme="http://rushroom.top/tags/%E6%90%9C%E7%B4%A2/"/>
-    
     <category term="USACO" scheme="http://rushroom.top/tags/USACO/"/>
+    
+    <category term="搜索" scheme="http://rushroom.top/tags/%E6%90%9C%E7%B4%A2/"/>
     
   </entry>
   
@@ -288,29 +310,6 @@
   </entry>
   
   <entry>
-    <title>斯涅尔定律最愚蠢的证法</title>
-    <link href="http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/"/>
-    <id>http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/</id>
-    <published>2023-01-06T13:13:00.697Z</published>
-    <updated>2023-03-16T13:36:41.080Z</updated>
-    
-    <content type="html"><![CDATA[<p>2022 年整的最后一个活。</p><span id="more"></span><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>平面直角坐标系上有两点 $S(0,h_1)$ 和 $T(w,h_2)$ 满足 $h_1&gt;0,h_2&lt;0$，一个动点 $P$ 从 $S$ 出发移动到 $T$。$P$ 在 $x$ 轴上方时的速度为 $v_1$，在 $x$ 轴下方时的速度为 $v_2$，求时间最短的路径。</p><p><img src="https://pic.imgdb.cn/item/63ae250608b683016390b61d.jpg"></p><p>斯涅尔定律：$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$</p><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>显然，路径为两条线段组成的折线，转折点在 $x$ 轴上。</p><p>设折线与 $x$ 轴交点位于 $(0,x)$。</p><p><img src="https://pic.imgdb.cn/item/63ae2e2e08b683016397f915.jpg"></p><p>容易得出路径长度的函数 $f(x)$：<br>$$f(x)&#x3D;\dfrac{\sqrt{h_1^2+x^2}}{v}+\dfrac{\sqrt{h_2^2+(w-x)^2}}{v2}$$</p><p>当取 $h_1&#x3D;3,h_2&#x3D;5,w&#x3D;10,v_1&#x3D;3,v_2&#x3D;1$ 时，函数图像长这个样子：</p><p><img src="https://pic.imgdb.cn/item/63ae298008b683016394040a.jpg"></p><p>发现它是一个单谷函数，它的最小值就是唯一的极小值。所以求导：</p><p>$$f’(x)&#x3D;\dfrac{v_2x\sqrt{(w-x)^2+h_2^2}-v_1(w-x)\sqrt{x^2+h_1^2}}{v_1v_2\sqrt{x^2+h_1^2}\sqrt{(w-x)^2+h_2^2}}$$</p><p>最小值点的导数为 $0$，所以得出：</p><p>$$v_2x\sqrt{(w-x)^2+h_2^2}&#x3D;v_1(w-x)\sqrt{x^2+h_1^2}$$</p><p>$$\dfrac{x\sqrt{(w-x)^2+h_2^2}}{(w-x)\sqrt{x^2+h_1^2}}&#x3D;\dfrac{v_1}{v_2}$$</p><p>$$\dfrac{x}{\sqrt{x^2+h_1^2}}:\dfrac{w-x}{\sqrt{(w-x)^2+h_2^2}}&#x3D;v_1:v_2$$</p><p><img src="https://pic.imgdb.cn/item/63ae2ef408b6830163989977.jpg"></p><p>$$\dfrac{SP}{SM}:\dfrac{QT}{MT}&#x3D;v_1:v_2$$</p><p>$$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$$</p><p>证毕。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;2022 年整的最后一个活。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="几何" scheme="http://rushroom.top/tags/%E5%87%A0%E4%BD%95/"/>
-    
-    <category term="微积分" scheme="http://rushroom.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>百度之星2022初赛游记</title>
     <link href="http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2022%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
     <id>http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2022%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
@@ -330,6 +329,29 @@
     
     
     <category term="百度之星" scheme="http://rushroom.top/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>斯涅尔定律最愚蠢的证法</title>
+    <link href="http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/"/>
+    <id>http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/</id>
+    <published>2023-01-06T13:13:00.697Z</published>
+    <updated>2023-03-16T13:36:41.080Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022 年整的最后一个活。</p><span id="more"></span><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>平面直角坐标系上有两点 $S(0,h_1)$ 和 $T(w,h_2)$ 满足 $h_1&gt;0,h_2&lt;0$，一个动点 $P$ 从 $S$ 出发移动到 $T$。$P$ 在 $x$ 轴上方时的速度为 $v_1$，在 $x$ 轴下方时的速度为 $v_2$，求时间最短的路径。</p><p><img src="https://pic.imgdb.cn/item/63ae250608b683016390b61d.jpg"></p><p>斯涅尔定律：$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$</p><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>显然，路径为两条线段组成的折线，转折点在 $x$ 轴上。</p><p>设折线与 $x$ 轴交点位于 $(0,x)$。</p><p><img src="https://pic.imgdb.cn/item/63ae2e2e08b683016397f915.jpg"></p><p>容易得出路径长度的函数 $f(x)$：<br>$$f(x)&#x3D;\dfrac{\sqrt{h_1^2+x^2}}{v}+\dfrac{\sqrt{h_2^2+(w-x)^2}}{v2}$$</p><p>当取 $h_1&#x3D;3,h_2&#x3D;5,w&#x3D;10,v_1&#x3D;3,v_2&#x3D;1$ 时，函数图像长这个样子：</p><p><img src="https://pic.imgdb.cn/item/63ae298008b683016394040a.jpg"></p><p>发现它是一个单谷函数，它的最小值就是唯一的极小值。所以求导：</p><p>$$f’(x)&#x3D;\dfrac{v_2x\sqrt{(w-x)^2+h_2^2}-v_1(w-x)\sqrt{x^2+h_1^2}}{v_1v_2\sqrt{x^2+h_1^2}\sqrt{(w-x)^2+h_2^2}}$$</p><p>最小值点的导数为 $0$，所以得出：</p><p>$$v_2x\sqrt{(w-x)^2+h_2^2}&#x3D;v_1(w-x)\sqrt{x^2+h_1^2}$$</p><p>$$\dfrac{x\sqrt{(w-x)^2+h_2^2}}{(w-x)\sqrt{x^2+h_1^2}}&#x3D;\dfrac{v_1}{v_2}$$</p><p>$$\dfrac{x}{\sqrt{x^2+h_1^2}}:\dfrac{w-x}{\sqrt{(w-x)^2+h_2^2}}&#x3D;v_1:v_2$$</p><p><img src="https://pic.imgdb.cn/item/63ae2ef408b6830163989977.jpg"></p><p>$$\dfrac{SP}{SM}:\dfrac{QT}{MT}&#x3D;v_1:v_2$$</p><p>$$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$$</p><p>证毕。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;2022 年整的最后一个活。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="几何" scheme="http://rushroom.top/tags/%E5%87%A0%E4%BD%95/"/>
+    
+    <category term="微积分" scheme="http://rushroom.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
     
   </entry>
   
@@ -377,9 +399,9 @@
     <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="贪心" scheme="http://rushroom.top/tags/%E8%B4%AA%E5%BF%83/"/>
-    
     <category term="POJ" scheme="http://rushroom.top/tags/POJ/"/>
+    
+    <category term="贪心" scheme="http://rushroom.top/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -449,9 +471,9 @@
     <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
-    
     <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
     
     <category term="图论" scheme="http://rushroom.top/tags/%E5%9B%BE%E8%AE%BA/"/>
     
@@ -477,33 +499,11 @@
     <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="Codeforces" scheme="http://rushroom.top/tags/Codeforces/"/>
-    
     <category term="树" scheme="http://rushroom.top/tags/%E6%A0%91/"/>
     
+    <category term="Codeforces" scheme="http://rushroom.top/tags/Codeforces/"/>
+    
     <category term="二分图" scheme="http://rushroom.top/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022/7/15模拟赛记</title>
-    <link href="http://rushroom.top/2022-7-15%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0/"/>
-    <id>http://rushroom.top/2022-7-15%E6%A8%A1%E6%8B%9F%E8%B5%9B%E8%AE%B0/</id>
-    <published>2023-01-06T13:13:00.667Z</published>
-    <updated>2023-03-16T13:36:30.155Z</updated>
-    
-    <content type="html"><![CDATA[<p>ych 出的模拟赛 &#x2F;bx &#x2F;bx &#x2F;bx</p><p>原题场 &#x2F;fn &#x2F;fn &#x2F;fn</p><span id="more"></span><h1 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h1><h2 id="T1-string"><a href="#T1-string" class="headerlink" title="T1 string"></a>T1 string</h2><p><img src="https://pic.imgdb.cn/item/62d2280ff54cd3f937513da1.jpg"></p><p>发现是 NOIP 原题，然而忘记自己做过了。</p><p>想了一会发现自己做过，但是 ych 这个【】居然卡常，1e6-&gt;3e6 &#x2F;oh</p><p>然而自己之前写的是 BIT，吸氧后 900+ms，感觉有点危险，写了个 $O(n\ln n+n\cdot 26)$ 的，感觉也许能过。</p><p>ych 啊 ych，既然已经加强数据范围了就不要出毒瘤数据了吧。</p><p>预估 100pts</p><h2 id="T2-work"><a href="#T2-work" class="headerlink" title="T2 work"></a>T2 work</h2><p>上午刚做过 <a href="https://www.luogu.com.cn/problem/P4158">P4158 粉刷匠</a>，就只想着背包了。</p><p>然后就写了个背包，复杂度 $O(na^2nb^2n)$，感觉很危险，有可能能过。</p><p>预估 80pts</p><h2 id="T3-sort"><a href="#T3-sort" class="headerlink" title="T3 sort"></a>T3 sort</h2><p>一开始瞎推推出来个 _逆序对数+递归层数_，然而这玩意居然是能过样例的。</p><p>写了个暴力对拍下，发现错了，然后白兰去看 T4 了。</p><p>最后 30min 随便想了一个结论：每个点到最后面的比它小的点的距离之和，发现能过样例，和暴力拍拍也对的 &#x2F;xia</p><p>最后造了个 2000 个 1e9 的数据，发现输出 0，于是写了个特判原数组已经有序就输出 $n$。</p><p>用 BIT 实现的，复杂度 $O(n \log n)$，1e5 的数据应该轻松。</p><p>预估 100pts</p><h2 id="T4-magic"><a href="#T4-magic" class="headerlink" title="T4 magic"></a>T4 magic</h2><p>想到 mod 不能约分，直接放弃。</p><p>预估 0pts</p><p>总分预估 100+80+100+0&#x3D;280pts</p><hr><h1 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h1><p>T1 被卡 T 成 80pts，T2,3,4 发挥稳定</p><p>总分 80+80+100+0&#x3D;260pts</p><p>发现 T2 正解实际上要二分，有单谷性质 &#x2F;px</p><p>蓝 &#x2F;bx</p><p>T3 居然结论猜对了</p><p>T4 矩阵乘法，维护前缀后缀积，然而 ych 卡带 log 的线段树做法 &#x2F;baojin</p><hr><p>ych 没开 O2，重测</p><p>&#x2F;fn &#x2F;fn &#x2F;fn</p><p>吸氧后 T1 过了。</p><p>O2 &#x2F;qiang</p><p>总分 100+80+100+0&#x3D;280pts</p><hr><p>以下为第二天</p><p>gzy T3 被卡后发现我的也挂了</p><p>successful hack!</p><p>gzy &#x2F;bx</p><p>总分 100+80+90+0&#x3D;270pts</p><hr><p>T1 被 sanwei 卡成 96 分。</p><p>反正本来也过不了的。</p><p>总分 96+80+90+0&#x3D;266pts</p><p>sanwei &#x2F;bx</p><h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1><p>贴下原题链接吧</p><ul><li>T1 string <a href="https://www.luogu.com.cn/problem/P7114">NOIP2020 字符串匹配</a></li><li>T2 work <a href="https://www.luogu.com.cn/problem/P5813">WC2001 高性能计算机</a></li><li>T3 sort <a href="https://www.luogu.com.cn/problem/P4372">USACO18OPEN Out of Sorts P</a></li><li>T4 magic <a href="https://loj.ac/p/573">「LibreOJ NOI Round #2」单枪匹马</a></li></ul><p>打的太差就不贴代码了</p><p><img src="https://pic.imgdb.cn/item/62d22d9df54cd3f93758aad5.png"></p><p>另附 ych 写的题解，如果像我一样觉得出题人很可爱的可以不看</p><details> <summary># 题解</summary><h2 id="A-string"><a href="#A-string" class="headerlink" title="A.string"></a>A.string</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给定字符串 $S$，求把 $S$ 拆分为 $ABAB…ABC$ 这样的形式的方案数。</p><h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>考虑枚举 $AB$ 的长度，用 $Z$ 函数求出最多连续 $AB$ 作为前缀的数量。</p><p>考虑 $C$ 中出现奇数次的字母的个数，发现对于 $AB$ 长度固定时只有两种取值，和选的 $AB$ 个数有关。</p><p>其中一种取值是固定的，另一种在枚举长度时可以递推求得。</p><p>然后在 $AB$ 中选择一个 $A$ 就是选择一个前缀，这个前缀出现奇数次字母的个数比 $C$ 出现奇数次字母的个数少。</p><p>这个用 bit 维护就可以了，这样是 nlog26。</p><p>进一步分析发现，$C$ 另一种取值每次变化量最多为 1，因此就不需要bit，只需要根据他这一次的变化计算贡献。把前面的结果加以利用。</p><h2 id="B-work"><a href="#B-work" class="headerlink" title="B.work"></a>B.work</h2><p>每个人有四个参数，求解决na个A和nb个B的最小时间。</p><h3 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h3><p>对第 $i$ 个人，考虑预处理 $cost(x,y)$ 表示解决 $x$ 个 $A$ 和 $y$ 个 $B$ 的最小代价。</p><p>这一部分是 $O(nm^3)$ 的。</p><p>然后如果是 $dp(i,x,y)$ 表示前 $i$ 个人解决 $x$ 个 $A$ 和 $y$ 个 $B$，转移枚举 $i$ 选几个 $A$ 几个 $B$，是 $O(nm^4)$。可以获得80分。</p><p>考虑优化。</p><p>由于答案是所有人的 max，可以考虑二分。</p><p>$dp(i,j)$ 表示 $i$ 个人在限制内解决 $j$ 个 $A$ 最多选的 $B$ 的个数。</p><p>然后这样发现是不对的。</p><p>因为 $cost(x,y)$ 并不是单调的。但是单谷的。</p><p>考虑证明。在 $x$ 固定的时候 $y$ 增加使得答案更小，说明把 $B$ 插入 $A$，且为独立的一段。</p><p>然后 $B$ 能有效插入的次数显然是有限的。不能插了以后都不能插。</p><p>所以 $dp(i,j)$ 应该存一个区间。</p><p>判 $nb$ 是否在区间内。</p><h2 id="C-sort"><a href="#C-sort" class="headerlink" title="C.sort"></a>C.sort</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>自己看吧。</p><h3 id="做法-2"><a href="#做法-2" class="headerlink" title="做法"></a>做法</h3><p>观察到这个 $cnt$ 每次增加的时候会增加一个 $length(A)$。</p><p>数形结合，对长度为length(A)的序列 bubble_sort，统计答案，实际上相当于把这个贡献均摊到每个点上。</p><p>于是考虑对每个点分别计算贡献。</p><p>这个点会连续被排序直到前后两个位置都成为分界线。</p><p>于是计算每个位置成为分界线的时间。</p><p>冒泡排序是稳定排序，所以Ai相不相同并不重要，可以全部当成不同的做，用双关键字。</p><p>然后要把所有 &lt;x 的放到前面去。</p><p>考虑冒泡排序的本质，就是分为若干段，每一段进行一个循环左移。</p><p>这个线一定会被包含在某一段中，然后一段结束的位置由于已经是分界线，不存在应该往前的，所以发现所有应该往前放的都会往前一位。而且这一段的开头一定不会是应该放在前面的。若是应该放在前面的，则一整段都是，又根据分界线，前面也都是，个数就不对了。</p><p>每个点最开始一定会被排一下，所以要和1取个max。</p><h2 id="D-magic"><a href="#D-magic" class="headerlink" title="D.magic"></a>D.magic</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>自己看。</p><h3 id="做法-3"><a href="#做法-3" class="headerlink" title="做法"></a>做法</h3><p>先考虑暴力，$a+\frac x y&#x3D;\frac {ay+x} {y}$，然后结合的时候可能还要倒过来。</p><p>$x$ 和 $y$ 互质，所以那个 $ay+x$ 和 $y$ 也互质。</p><p>所以就不用考虑约分，直接模意义下也可以做。</p><p>然后你发现把分子分母上矩阵，就可以做了。</p><p>我把线段树维护卡了，直接前缀和，处理矩阵的逆元。</p></details><p>THE END</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;ych 出的模拟赛 &amp;#x2F;bx &amp;#x2F;bx &amp;#x2F;bx&lt;/p&gt;
-&lt;p&gt;原题场 &amp;#x2F;fn &amp;#x2F;fn &amp;#x2F;fn&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="模拟赛" scheme="http://rushroom.top/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/"/>
     
   </entry>
   
