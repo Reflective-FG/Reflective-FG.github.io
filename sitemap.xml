@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://rushroom.top/penguin.html</loc>
-    
-    <lastmod>2023-09-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/</loc>
     
     <lastmod>2023-08-16</lastmod>
@@ -270,7 +261,7 @@
   </url>
   
   <url>
-    <loc>http://rushroom.top/tags/AtCoder/</loc>
+    <loc>http://rushroom.top/tags/Pi%E8%8A%82/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -278,6 +269,13 @@
   
   <url>
     <loc>http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2023-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rushroom.top/tags/AtCoder/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -298,7 +296,7 @@
   </url>
   
   <url>
-    <loc>http://rushroom.top/tags/Pi%E8%8A%82/</loc>
+    <loc>http://rushroom.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -313,13 +311,6 @@
   
   <url>
     <loc>http://rushroom.top/tags/%E6%A0%91/</loc>
-    <lastmod>2023-09-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://rushroom.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -361,13 +352,6 @@
   </url>
   
   <url>
-    <loc>http://rushroom.top/tags/POJ/</loc>
-    <lastmod>2023-09-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://rushroom.top/tags/FFT/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -375,7 +359,7 @@
   </url>
   
   <url>
-    <loc>http://rushroom.top/tags/URAL/</loc>
+    <loc>http://rushroom.top/tags/POJ/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -383,6 +367,13 @@
   
   <url>
     <loc>http://rushroom.top/tags/SPOJ/</loc>
+    <lastmod>2023-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rushroom.top/tags/URAL/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -417,13 +408,6 @@
   </url>
   
   <url>
-    <loc>http://rushroom.top/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/</loc>
-    <lastmod>2023-09-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://rushroom.top/tags/%E5%87%A0%E4%BD%95/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -432,6 +416,13 @@
   
   <url>
     <loc>http://rushroom.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
+    <lastmod>2023-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://rushroom.top/tags/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F/</loc>
     <lastmod>2023-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
