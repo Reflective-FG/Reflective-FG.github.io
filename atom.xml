@@ -175,9 +175,9 @@
     <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-    <category term="Pi节" scheme="http://rushroom.top/tags/Pi%E8%8A%82/"/>
-    
     <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="Pi节" scheme="http://rushroom.top/tags/Pi%E8%8A%82/"/>
     
   </entry>
   
@@ -199,11 +199,11 @@
     <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
     <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
     
     <category term="字符串" scheme="http://rushroom.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -310,29 +310,6 @@
   </entry>
   
   <entry>
-    <title>斯涅尔定律最愚蠢的证法</title>
-    <link href="http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/"/>
-    <id>http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/</id>
-    <published>2023-01-06T13:13:00.697Z</published>
-    <updated>2023-03-16T13:36:41.080Z</updated>
-    
-    <content type="html"><![CDATA[<p>2022 年整的最后一个活。</p><span id="more"></span><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>平面直角坐标系上有两点 $S(0,h_1)$ 和 $T(w,h_2)$ 满足 $h_1&gt;0,h_2&lt;0$，一个动点 $P$ 从 $S$ 出发移动到 $T$。$P$ 在 $x$ 轴上方时的速度为 $v_1$，在 $x$ 轴下方时的速度为 $v_2$，求时间最短的路径。</p><p><img src="https://pic.imgdb.cn/item/63ae250608b683016390b61d.jpg"></p><p>斯涅尔定律：$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$</p><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>显然，路径为两条线段组成的折线，转折点在 $x$ 轴上。</p><p>设折线与 $x$ 轴交点位于 $(0,x)$。</p><p><img src="https://pic.imgdb.cn/item/63ae2e2e08b683016397f915.jpg"></p><p>容易得出路径长度的函数 $f(x)$：<br>$$f(x)&#x3D;\dfrac{\sqrt{h_1^2+x^2}}{v}+\dfrac{\sqrt{h_2^2+(w-x)^2}}{v2}$$</p><p>当取 $h_1&#x3D;3,h_2&#x3D;5,w&#x3D;10,v_1&#x3D;3,v_2&#x3D;1$ 时，函数图像长这个样子：</p><p><img src="https://pic.imgdb.cn/item/63ae298008b683016394040a.jpg"></p><p>发现它是一个单谷函数，它的最小值就是唯一的极小值。所以求导：</p><p>$$f’(x)&#x3D;\dfrac{v_2x\sqrt{(w-x)^2+h_2^2}-v_1(w-x)\sqrt{x^2+h_1^2}}{v_1v_2\sqrt{x^2+h_1^2}\sqrt{(w-x)^2+h_2^2}}$$</p><p>最小值点的导数为 $0$，所以得出：</p><p>$$v_2x\sqrt{(w-x)^2+h_2^2}&#x3D;v_1(w-x)\sqrt{x^2+h_1^2}$$</p><p>$$\dfrac{x\sqrt{(w-x)^2+h_2^2}}{(w-x)\sqrt{x^2+h_1^2}}&#x3D;\dfrac{v_1}{v_2}$$</p><p>$$\dfrac{x}{\sqrt{x^2+h_1^2}}:\dfrac{w-x}{\sqrt{(w-x)^2+h_2^2}}&#x3D;v_1:v_2$$</p><p><img src="https://pic.imgdb.cn/item/63ae2ef408b6830163989977.jpg"></p><p>$$\dfrac{SP}{SM}:\dfrac{QT}{MT}&#x3D;v_1:v_2$$</p><p>$$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$$</p><p>证毕。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;2022 年整的最后一个活。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="几何" scheme="http://rushroom.top/tags/%E5%87%A0%E4%BD%95/"/>
-    
-    <category term="微积分" scheme="http://rushroom.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
-    
-  </entry>
-  
-  <entry>
     <title>百度之星2022初赛游记</title>
     <link href="http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2022%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
     <id>http://rushroom.top/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2022%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
@@ -356,6 +333,29 @@
   </entry>
   
   <entry>
+    <title>斯涅尔定律最愚蠢的证法</title>
+    <link href="http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/"/>
+    <id>http://rushroom.top/%E6%96%AF%E6%B6%85%E5%B0%94%E5%AE%9A%E5%BE%8B%E6%9C%80%E6%84%9A%E8%A0%A2%E7%9A%84%E8%AF%81%E6%B3%95/</id>
+    <published>2023-01-06T13:13:00.697Z</published>
+    <updated>2023-03-16T13:36:41.080Z</updated>
+    
+    <content type="html"><![CDATA[<p>2022 年整的最后一个活。</p><span id="more"></span><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>平面直角坐标系上有两点 $S(0,h_1)$ 和 $T(w,h_2)$ 满足 $h_1&gt;0,h_2&lt;0$，一个动点 $P$ 从 $S$ 出发移动到 $T$。$P$ 在 $x$ 轴上方时的速度为 $v_1$，在 $x$ 轴下方时的速度为 $v_2$，求时间最短的路径。</p><p><img src="https://pic.imgdb.cn/item/63ae250608b683016390b61d.jpg"></p><p>斯涅尔定律：$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$</p><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>显然，路径为两条线段组成的折线，转折点在 $x$ 轴上。</p><p>设折线与 $x$ 轴交点位于 $(0,x)$。</p><p><img src="https://pic.imgdb.cn/item/63ae2e2e08b683016397f915.jpg"></p><p>容易得出路径长度的函数 $f(x)$：<br>$$f(x)&#x3D;\dfrac{\sqrt{h_1^2+x^2}}{v}+\dfrac{\sqrt{h_2^2+(w-x)^2}}{v2}$$</p><p>当取 $h_1&#x3D;3,h_2&#x3D;5,w&#x3D;10,v_1&#x3D;3,v_2&#x3D;1$ 时，函数图像长这个样子：</p><p><img src="https://pic.imgdb.cn/item/63ae298008b683016394040a.jpg"></p><p>发现它是一个单谷函数，它的最小值就是唯一的极小值。所以求导：</p><p>$$f’(x)&#x3D;\dfrac{v_2x\sqrt{(w-x)^2+h_2^2}-v_1(w-x)\sqrt{x^2+h_1^2}}{v_1v_2\sqrt{x^2+h_1^2}\sqrt{(w-x)^2+h_2^2}}$$</p><p>最小值点的导数为 $0$，所以得出：</p><p>$$v_2x\sqrt{(w-x)^2+h_2^2}&#x3D;v_1(w-x)\sqrt{x^2+h_1^2}$$</p><p>$$\dfrac{x\sqrt{(w-x)^2+h_2^2}}{(w-x)\sqrt{x^2+h_1^2}}&#x3D;\dfrac{v_1}{v_2}$$</p><p>$$\dfrac{x}{\sqrt{x^2+h_1^2}}:\dfrac{w-x}{\sqrt{(w-x)^2+h_2^2}}&#x3D;v_1:v_2$$</p><p><img src="https://pic.imgdb.cn/item/63ae2ef408b6830163989977.jpg"></p><p>$$\dfrac{SP}{SM}:\dfrac{QT}{MT}&#x3D;v_1:v_2$$</p><p>$$\dfrac{\sin(\theta_1)}{v_1}&#x3D;\dfrac{\sin(\theta_2)}{v_2}$$</p><p>证毕。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;2022 年整的最后一个活。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学" scheme="http://rushroom.top/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="几何" scheme="http://rushroom.top/tags/%E5%87%A0%E4%BD%95/"/>
+    
+    <category term="微积分" scheme="http://rushroom.top/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>UVA1063 Marble Game</title>
     <link href="http://rushroom.top/UVA1063-Marble-Game/"/>
     <id>http://rushroom.top/UVA1063-Marble-Game/</id>
@@ -373,11 +373,35 @@
     <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
     
     
-    <category term="UVA" scheme="http://rushroom.top/tags/UVA/"/>
-    
     <category term="搜索" scheme="http://rushroom.top/tags/%E6%90%9C%E7%B4%A2/"/>
     
+    <category term="UVA" scheme="http://rushroom.top/tags/UVA/"/>
+    
     <category term="模拟" scheme="http://rushroom.top/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>URAL1095 Nikifor 3</title>
+    <link href="http://rushroom.top/URAL1095-Nikifor-3/"/>
+    <id>http://rushroom.top/URAL1095-Nikifor-3/</id>
+    <published>2023-01-06T13:13:00.682Z</published>
+    <updated>2023-03-16T13:38:03.146Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://acm.timus.ru/problem.aspx?space=1&num=1095">题目传送门</a></p><p>打表找规律。</p><span id="more"></span><p>首先你得先打个表，就像这样：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, <span class="number">4</span>) cout &lt;&lt; a[i], x = x * <span class="number">10</span> + a[i];</span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; x % <span class="number">7</span> &lt;&lt; endl;</span><br><span class="line">&#125; <span class="keyword">while</span> (<span class="built_in">next_permutation</span>(a, a + <span class="number">4</span>));</span><br></pre></td></tr></table></figure><p>然后你就能惊讶地发现，对于每个 $i\in [1,7]$，都有至少一个 $1,2,3,4$ 的排列满足：$(组成的四位数)\equiv i\pmod i$。</p><p>所以考虑先在字符串中去掉 $1,2,3,4$，将剩余的所有数字放在最后面，并处理出这串数 $\bmod 7$ 是多少，然后把 $1,2,3,4$ 按照某种顺序放在最前面就行了。</p><p>之所以要把剩余部分放在最后面而不是最前面的原因是，如果有这样一组数据：<code>001234</code>，就会出现前导零。</p><p>Code</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> T_, case_;</span><br><span class="line"><span class="type">int</span> A[<span class="number">7</span>][<span class="number">4</span>], sum, p;</span><br><span class="line">string s, t;</span><br><span class="line"><span class="type">bool</span> f[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">init</span>(f, <span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    t = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    p = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="type">int</span> x = s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &gt;= <span class="number">1</span> &amp;&amp; x &lt;= <span class="number">4</span> &amp;&amp; !f[x])f[x] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            t += s[i];</span><br><span class="line">            p = p * <span class="number">10</span> % <span class="number">7</span>;</span><br><span class="line">            sum = (sum * <span class="number">10</span> + x) % <span class="number">7</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">rep</span>(i, <span class="number">7</span>)<span class="keyword">if</span> ((i * p + sum) % <span class="number">7</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">rep</span>(j, <span class="number">4</span>)cout &lt;&lt; A[i][j];</span><br><span class="line">        cout &lt;&lt; t &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">init</span>(A, <span class="number">-1</span>);</span><br><span class="line">    <span class="type">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">rep</span>(i, <span class="number">4</span>) x = x * <span class="number">10</span> + a[i];</span><br><span class="line">        <span class="keyword">if</span> (A[x % <span class="number">7</span>][<span class="number">0</span>] == <span class="number">-1</span>)<span class="built_in">rep</span>(i, <span class="number">4</span>)A[x % <span class="number">7</span>][i] = a[i];</span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">next_permutation</span>(a, a + <span class="number">4</span>));</span><br><span class="line">    T_ = <span class="number">1</span>;</span><br><span class="line">    cin &gt;&gt; T_;</span><br><span class="line">    <span class="keyword">for</span> (case_ = <span class="number">1</span>; case_ &lt;= T_; case_++)<span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://acm.timus.ru/problem.aspx?space=1&amp;num=1095&quot;&gt;题目传送门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打表找规律。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="URAL" scheme="http://rushroom.top/tags/URAL/"/>
     
   </entry>
   
@@ -429,30 +453,6 @@
   </entry>
   
   <entry>
-    <title>URAL1095 Nikifor 3</title>
-    <link href="http://rushroom.top/URAL1095-Nikifor-3/"/>
-    <id>http://rushroom.top/URAL1095-Nikifor-3/</id>
-    <published>2023-01-06T13:13:00.682Z</published>
-    <updated>2023-03-16T13:38:03.146Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://acm.timus.ru/problem.aspx?space=1&num=1095">题目传送门</a></p><p>打表找规律。</p><span id="more"></span><p>首先你得先打个表，就像这样：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, <span class="number">4</span>) cout &lt;&lt; a[i], x = x * <span class="number">10</span> + a[i];</span><br><span class="line">    cout &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; x % <span class="number">7</span> &lt;&lt; endl;</span><br><span class="line">&#125; <span class="keyword">while</span> (<span class="built_in">next_permutation</span>(a, a + <span class="number">4</span>));</span><br></pre></td></tr></table></figure><p>然后你就能惊讶地发现，对于每个 $i\in [1,7]$，都有至少一个 $1,2,3,4$ 的排列满足：$(组成的四位数)\equiv i\pmod i$。</p><p>所以考虑先在字符串中去掉 $1,2,3,4$，将剩余的所有数字放在最后面，并处理出这串数 $\bmod 7$ 是多少，然后把 $1,2,3,4$ 按照某种顺序放在最前面就行了。</p><p>之所以要把剩余部分放在最后面而不是最前面的原因是，如果有这样一组数据：<code>001234</code>，就会出现前导零。</p><p>Code</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> T_, case_;</span><br><span class="line"><span class="type">int</span> A[<span class="number">7</span>][<span class="number">4</span>], sum, p;</span><br><span class="line">string s, t;</span><br><span class="line"><span class="type">bool</span> f[<span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">init</span>(f, <span class="number">0</span>);</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    t = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    p = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i, s.<span class="built_in">size</span>()) &#123;</span><br><span class="line">        <span class="type">int</span> x = s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (x &gt;= <span class="number">1</span> &amp;&amp; x &lt;= <span class="number">4</span> &amp;&amp; !f[x])f[x] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            t += s[i];</span><br><span class="line">            p = p * <span class="number">10</span> % <span class="number">7</span>;</span><br><span class="line">            sum = (sum * <span class="number">10</span> + x) % <span class="number">7</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">rep</span>(i, <span class="number">7</span>)<span class="keyword">if</span> ((i * p + sum) % <span class="number">7</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">rep</span>(j, <span class="number">4</span>)cout &lt;&lt; A[i][j];</span><br><span class="line">        cout &lt;&lt; t &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">init</span>(A, <span class="number">-1</span>);</span><br><span class="line">    <span class="type">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span> &#125;;</span><br><span class="line">    <span class="keyword">do</span> &#123;</span><br><span class="line">        <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">rep</span>(i, <span class="number">4</span>) x = x * <span class="number">10</span> + a[i];</span><br><span class="line">        <span class="keyword">if</span> (A[x % <span class="number">7</span>][<span class="number">0</span>] == <span class="number">-1</span>)<span class="built_in">rep</span>(i, <span class="number">4</span>)A[x % <span class="number">7</span>][i] = a[i];</span><br><span class="line">    &#125; <span class="keyword">while</span> (<span class="built_in">next_permutation</span>(a, a + <span class="number">4</span>));</span><br><span class="line">    T_ = <span class="number">1</span>;</span><br><span class="line">    cin &gt;&gt; T_;</span><br><span class="line">    <span class="keyword">for</span> (case_ = <span class="number">1</span>; case_ &lt;= T_; case_++)<span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://acm.timus.ru/problem.aspx?space=1&amp;num=1095&quot;&gt;题目传送门&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;打表找规律。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="题解" scheme="http://rushroom.top/categories/%E9%A2%98%E8%A7%A3/"/>
-    
-    
-    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-    <category term="URAL" scheme="http://rushroom.top/tags/URAL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ABC255比赛笔记</title>
     <link href="http://rushroom.top/ABC255%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
     <id>http://rushroom.top/ABC255%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/</id>
@@ -471,9 +471,9 @@
     <category term="比赛笔记" scheme="http://rushroom.top/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
-    
     <category term="AtCoder" scheme="http://rushroom.top/tags/AtCoder/"/>
+    
+    <category term="数学" scheme="http://rushroom.top/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="图论" scheme="http://rushroom.top/tags/%E5%9B%BE%E8%AE%BA/"/>
     
