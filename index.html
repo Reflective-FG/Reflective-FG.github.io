@@ -30,52 +30,7 @@
       window.addEventListener('hashchange', switchTab, false);
   })();
   </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Rushroom's Blog" type="application/atom+xml">
-</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Rushroom&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-09-25T13:47:37.322Z" title="2023/9/25 21:47:37">2023-09-25</time>发表</span><span class="level-item"><time dateTime="2023-09-25T13:51:18.895Z" title="2023/9/25 21:51:18">2023-09-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/BOB%E9%97%AE%E9%A2%98%E7%9A%84%E8%BE%83%E5%A4%8D%E6%9D%82%E8%A7%A3%E6%B3%95/">BOB问题的较复杂解法</a></h1><div class="content"><p>改编自我一年前出的一道 OI 题。</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>$a$ 是一个数列，初始时长度为 $0$。甲和乙轮流操作，每次可以在 $a$ 的末尾添加一个数 $x(x\in {0,1})$，直至 $a$ 的长度为 $n$。</p>
-<p>记 $S$ 为“好三元组”的个数。若整数三元组 $(i,j,k)$ 满足 $1\le i&lt;j&lt;k\le n$ 并且 $a_i&#x3D;0,a_j&#x3D;1,a_k&#x3D;0$，则记其为“好三元组”。记 $S$ 为“好三元组”的个数。若 $S&#x3D;0$ 或 $S$ 为指数，则乙获胜，否则甲获胜。</p>
-<p>求出所有正整数 $n$，使得甲先手和甲后手两种情况中，有且仅有一种情况下，甲有必胜策略。</p>
-<h1 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h1><p>由枚举可得：</p>
-<blockquote>
-<p>当 $1\le n\le6$ 时，无论甲是先手还是后手，都必输；</p>
-<p>当 $n&#x3D;7$ 且甲先手时，甲必胜；</p>
-<p>当 $n&#x3D;7$ 且甲后手时，甲必输；</p>
-<p>当 $n&#x3D;8$ 时，无论甲是先手还是后手，都必胜。</p>
-</blockquote>
-<p>下证 $n \ge 9$ 时，无论甲是先手还是后手，都必胜。$(*)$</p>
-<ol>
-<li>若 $n$ 为奇数且甲先手，或者 $n$ 为偶数且甲后手：</li>
-</ol>
-<blockquote>
-<p>由前提可知最后一次操作是甲操作的。</p>
-<p>因为 $n \ge 9$，所以甲至少有五次操作机会。此时甲前四次分别添加 $0,1,1,0$，第五次添加 $0$ 或 $1$ 使得 $a$ 中 $0$ 的个数为奇数。</p>
-<p>对于每个 $a_i&#x3D;1$，记其左边 $0$ 的个数为 $p$，右边 $0$ 的个数为 $q$，所以以 $a_i$ 为中间一项的“好三元组”个数为 $p\cdot q$。</p>
-<p>因为 $0$ 的总个数为奇数，所以 $p+q$ 为奇数，所以 $p,q$ 中有且仅有一个为偶数，所以 $p\cdot q$ 为偶数。</p>
-<p>所以以每个 $a_i&#x3D;1$ 为中间项的“好三元组”个数均为偶数，所以 $S$ 为偶数。</p>
-<p>又因为无论乙在 $a_2$ 填 $0$ 还是 $1$，$S$ 必定大于 $2$，所以 $S$ 必定为合数。</p>
-<p>所以当 $n$ 为奇数且甲先手，或者 $n$ 为偶数且甲后手时，甲有必胜策略。</p>
-</blockquote>
-<ol start="2">
-<li>若 $n$ 为奇数且甲后手，或者 $n$ 为偶数且甲先手：</li>
-</ol>
-<blockquote>
-<p>考虑数学归纳法。</p>
-<p>若 $n\le k$ 时 $(*)$ 成立，则 $n&#x3D;k+1$ 时：</p>
-<p>若 $n$ 为偶数且甲先手，则甲只需第一轮放 $1$，转化为 $n&#x3D;k$ 且甲后手的情况，由归纳可知甲必胜。</p>
-<p>若 $n$ 为奇数且甲后手，则甲先一直模仿乙上一轮的操作，直至字符串长度为 $n-8$。</p>
-<ol>
-<li><p>若前 $n-8$ 个数中已经出现了“好三元组”，那么接下来甲一直模仿乙的操作。所以除 $a_{n-8}$ 外，有 $a_{2i}&#x3D;a_{2i+1}$，因此 $S$ 一定为 $4$ 的倍数，为合数。</p>
-</li>
-<li><p>若前 $n-8$ 个数全为 $1$，则转化为 $n&#x3D;8$ 且甲先手的情况，甲必胜。</p>
-</li>
-<li><p>若前 $n-8$ 个数全为 $0$，接下来三轮甲分别放 $1,0,0$，若乙这三轮都放 $1$，则甲最后一轮放 $1$，否则放 $0$。依此策略甲可获胜。</p>
-</li>
-<li><p>若前 $n-8$ 个数中，存在整数 $i,j \in [1,n-8]$ 且 $i &lt; j$，使得 $a_i&#x3D;0,a_j&#x3D;1$，但不存在“好三元组”，则前 $n-8$ 个数形如 $11\cdots 100\cdots 0 11\cdots 1$。此时甲在前三轮一直模仿乙的操作，若前三轮乙都放 $1$，则甲第四轮放 $0$，否则继续模仿乙的操作。依此策略甲可获胜。</p>
-</li>
-</ol>
-</blockquote>
-<p>综上 $(*)$ 得证。</p>
-<p>所以当且仅当 $n&#x3D;7$ 时满足题意。</p>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-08-16T13:19:48.629Z" title="2023/8/16 21:19:48">2023-08-16</time>发表</span><span class="level-item"><time dateTime="2023-08-16T15:00:06.263Z" title="2023/8/16 23:00:06">2023-08-16</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/">比赛笔记</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/">百度之星2023初赛游记</a></h1><div class="content"><p>打得是第一场，赛时只做出了5题，rk50几，感觉不太行。</p>
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Rushroom&#039;s Blog</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-09-25T13:47:37.322Z" title="2023/9/25 21:47:37">2023-09-25</time>发表</span><span class="level-item"><time dateTime="2023-09-25T14:02:38.779Z" title="2023/9/25 22:02:38">2023-09-25</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/BOB%E9%97%AE%E9%A2%98%E7%9A%84%E8%BE%83%E5%A4%8D%E6%9D%82%E8%A7%A3%E6%B3%95/">BOB问题的较复杂解法</a></h1><div class="content"><p>改编自我一年前出的一道 OI 题。</p></div><a class="article-more button is-small is-size-7" href="/BOB%E9%97%AE%E9%A2%98%E7%9A%84%E8%BE%83%E5%A4%8D%E6%9D%82%E8%A7%A3%E6%B3%95/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-08-16T13:19:48.629Z" title="2023/8/16 21:19:48">2023-08-16</time>发表</span><span class="level-item"><time dateTime="2023-08-16T15:00:06.263Z" title="2023/8/16 23:00:06">2023-08-16</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%AF%94%E8%B5%9B%E7%AC%94%E8%AE%B0/">比赛笔记</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/">百度之星2023初赛游记</a></h1><div class="content"><p>打得是第一场，赛时只做出了5题，rk50几，感觉不太行。</p>
 <p><a target="_blank" rel="noopener" href="https://www.matiji.net/exam/ojquestionlist?questionBankId=179CE77A7B772D15A8C00DD8198AAC74">题目传送门</a></p></div><a class="article-more button is-small is-size-7" href="/%E7%99%BE%E5%BA%A6%E4%B9%8B%E6%98%9F2023%E5%88%9D%E8%B5%9B%E6%B8%B8%E8%AE%B0/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-26T14:25:33.047Z" title="2023/3/26 22:25:33">2023-03-26</time>发表</span><span class="level-item"><time dateTime="2023-03-26T14:40:40.566Z" title="2023/3/26 22:40:40">2023-03-26</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/CF1617E-Christmas-Chocolates/">CF1617E Christmas Chocolates</a></h1><div class="content"><p>「2023zimpha」树的直径练习题</p>
 <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1617/problem/E">题目传送门</a></p></div><a class="article-more button is-small is-size-7" href="/CF1617E-Christmas-Chocolates/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-24T12:27:09.636Z" title="2023/3/24 20:27:09">2023-03-24</time>发表</span><span class="level-item"><time dateTime="2023-03-24T15:14:48.568Z" title="2023/3/24 23:14:48">2023-03-24</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/CF1672E-notepad-exe/">CF1672E notepad.exe</a></h1><div class="content"><p>「2023zimpha」二分练习题</p>
 <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1672/problem/E">题目传送门</a></p></div><a class="article-more button is-small is-size-7" href="/CF1672E-notepad-exe/#more">阅读更多</a></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2023-03-24T11:55:14.738Z" title="2023/3/24 19:55:14">2023-03-24</time>发表</span><span class="level-item"><time dateTime="2023-03-24T12:26:34.654Z" title="2023/3/24 20:26:34">2023-03-24</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/ABC285G-Tatami/">ABC285G Tatami</a></h1><div class="content"><p>AC 的第一道上下界网络流。</p>

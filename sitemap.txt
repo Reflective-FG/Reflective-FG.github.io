@@ -38,12 +38,12 @@ http://rushroom.top/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/
 http://rushroom.top/tags/%E7%BB%84%E5%90%88/
 http://rushroom.top/tags/%E6%A0%91/
 http://rushroom.top/tags/Codeforces/
-http://rushroom.top/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/
 http://rushroom.top/tags/%E4%BA%8C%E5%88%86/
+http://rushroom.top/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/
+http://rushroom.top/tags/FFT/
 http://rushroom.top/tags/%E8%B4%AA%E5%BF%83/
 http://rushroom.top/tags/DP/
 http://rushroom.top/tags/POJ/
-http://rushroom.top/tags/FFT/
 http://rushroom.top/tags/SPOJ/
 http://rushroom.top/tags/URAL/
 http://rushroom.top/tags/USACO/
